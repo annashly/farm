@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for i in farm_list %}
+        <div style="margin-bottom:10px;">
+            <div class="card text-left" style="width: 18rem;">
+            <img class="card-img-top image-center" src="{{i.img.url}}" alt="Card image cap" style="width:100%; height:250px;">
+       <div class="card-body">
+            <h5 class="card-title">{{i.name}}</h5>
+            <p class="card-text">{{i.desc}}</p>
+            <a href="{% url 'farmapp:detail' i.id %}" class="btn btn-primary">for more</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
